@@ -1,26 +1,24 @@
 # Amarillo's ARKit Suite
 
+Work in progress. Expect the addon and this readme to get better later.
+
 # What is this?
 
-Amarillo's ARKit Suite is a Blender add-on that adds a controller rig for ARKit face shape keys, so you can drive facial expressions with bones instead of moving sliders manually.
+Amarillo's ARKit Suite is a Blender add-on that adds a controller rig for ARKit face shape keys, so you can drive facial expressions with bones instead of moving the tiny shape key value sliders manually.
 
 # What features does it include?
 
 ### Packaged ARKit controller rig
 
-The add-on can append the included `ARKit Controller Rig.blend` collection into your scene.
+The add-on will append the included `ARKit Controller Rig.blend` collection into your scene, which is just a custom armature.
 
 ### ARKit shape key binding
 
-It creates drivers for matching ARKit shape keys on your face mesh. Missing shape keys are skipped, so it only binds what your character actually has.
+It creates drivers for matching ARKit shape keys on your face mesh. Missing shape keys are skipped, so it only binds what your character actually has. If you already have drivers for those shape keys, you might lose them so plan accordingly.
 
-### Eye controls
+### Controls
 
-The rig drives eye look, blink, squint, and wide shape keys from the eye guide bones.
-
-### Jaw and mouth controls
-
-It also binds the main jaw, mouth close, smile, frown, dimple, press, stretch, and upper/lower lip controls.
+The rig drives a bunch of ARKit shape keys using bones with constraints. At present moment this covers around 60% of shape keys. I'll add more later and I'll expand this section as well.
 
 ### Head follow
 
@@ -38,11 +36,11 @@ After installing, open the panel here:
 
 `3D Viewport > Sidebar > Amarillo > Amarillo's ARKit Suite`
 
+Click `Append Controller Rig` to append the custom armature collection to your scene.
+
 Select your face mesh, or assign it in the `Target Mesh` field. The mesh needs ARKit-style shape keys, such as `eyeBlinkLeft`, `jawOpen`, `mouthSmileLeft`, and so on.
 
-If you do not already have the controller rig in the scene, click `Append Controller Rig`.
-
-To set everything up in one step, select or assign the target mesh and click `Bind / Refresh Drivers`. The add-on will append or find the controller rig, bind the matching shape keys, and optionally make the rig follow your head bone.
+Click `Bind / Refresh Drivers`. The add-on will bind its bones with the matching shape keys using drivers, and optionally make the rig follow your head bone.
 
 If the head follow setup does not find the right bone automatically, assign the character armature in `Head Armature` and type the correct bone name in `Head Bone`.
 
@@ -50,4 +48,4 @@ After binding, pose or animate the controller rig bones to drive the facial shap
 
 # How this addon was made
 
-I am actually not very good with python. I made this addon with ChatGPT by asking for what I needed, testing it in Blender, and correcting the parts that were wrong. Make of that what you will.
+I am not gonna claim too much credit. I made with by whipping ChatGPT for a few hours with a bunch of instructions. If that makes you not want to use this addon then go ahead and buy yourself an ice cream or something.
